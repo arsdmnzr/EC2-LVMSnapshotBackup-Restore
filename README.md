@@ -49,3 +49,43 @@ It's a practical DevOps use case that shows how to handle disaster recovery and 
 
 ```bash
 echo "Hello from LVM!" | sudo tee /mnt/mydata/hello.txt
+4. Backup with Snapshot
+
+    Unmounted volume
+
+    Created AWS snapshot of the attached EBS volume
+
+5. Restore on New EC2 Instance
+
+    Launched new EC2 instance in same AZ
+
+    Created new volume from snapshot and attached as /dev/xvdf
+
+    Activated LVM:
+
+sudo vgscan
+sudo vgchange -ay
+sudo lvdisplay
+sudo mount /dev/myvg/mylv /mnt/recovery
+
+Verified file:
+
+    cat /mnt/recovery/hello.txt
+
+Outcome
+
+Successfully demonstrated:
+
+    LVM configuration and volume management
+
+    EBS snapshot creation and restoration
+
+    Real-world data recovery in AWS
+
+Author
+
+Your Name Here
+Cloud & DevOps Learner
+License
+
+This project is open-source and free to use.

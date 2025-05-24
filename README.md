@@ -58,12 +58,12 @@ echo "Hello from LVM!" | sudo tee /mnt/mydata/hello.txt
 sudo vgscan
 sudo vgchange -ay
 sudo lvdisplay
-sudo mount /dev/myvg/mylv /mnt/recovery
+sudo mount /dev/myvg/mylv /mnt/mydata
 
 Verify the recovered file:
 bash
 
-    cat /mnt/recovery/hello.txt
+    cat /mnt/mydata/hello.txt
 
 Outcome
 
@@ -75,7 +75,7 @@ Successfully demonstrated:
 
 Author
 
-Your Name Here
+Arshad Manzoor
 Cloud & DevOps Learner
 License
 
